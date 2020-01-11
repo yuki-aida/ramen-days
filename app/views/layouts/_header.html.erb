@@ -1,0 +1,16 @@
+<header>
+    <div id="header">
+      <%= link_to image_tag("ramendays.png", size: "100x100"), root_path %><%= link_to "Ramen Days", root_path %>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Ramen Days", root_path, id: "logo" %></li>
+        <li><%= link_to "Ramen Daysについて", about_path %></li>
+        <li><%= link_to "店舗一覧", "#" %></li>
+        <li><%= link_to "新規登録", "#" %></li>
+        <li><%= link_to "ログイン", "#" %></li>
+      </ul>
+      </div>
+    </nav>
+</header>
