@@ -1,0 +1,52 @@
+<h1><%= @shop.name %></h1>
+
+<div class = "container">
+  <div class="shop-image">
+  <% if @shop.image.present? %>
+  <%= image_tag @shop.image.url, alt: @shop.image, :size => "555x370" %>
+  <% else %>
+  <%= image_tag "878520.jpg", alt: @shop.image, :size => "555x370" %>
+  <% end %>
+  </div>
+  <h3 style="text-align: center;"><%= "「#{@shop.name}」へのコメント" %></h3>
+  <h3>店舗情報</h3>
+  <div class="shop-info">
+  <table>
+    <tr>
+      <th>店舗名</th>
+      <td><%= @shop.name %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= @shop.adress %></td>
+    </tr>
+    <tr>
+      <th>エリア</th>
+      <td><%= @shop.area %></td>
+    </tr>
+    <tr>
+      <th>最寄駅</th>
+      <td><%= @shop.station %></td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= @shop.tel %></td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td><%= @shop.business_hour %></td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td><%= @shop.holiday %></td>
+    </tr>
+    <tr>
+      <th>アクセス</th>
+      <td><%= @shop.access %></td>
+    </tr>
+  </table>
+  </div>
+</div>
+<br>
+<br>
+<%= link_to "編集", edit_shop_path(@shop), class: "btn btn-info edit-btn" %>

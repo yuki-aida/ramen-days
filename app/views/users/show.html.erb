@@ -1,1 +1,27 @@
-<%= @user.name %>
+<div class="container">
+  <h1>ユーザー情報</h1>
+  <div class="user-info">
+    <div class="user-image">
+    <% if @user.image.present? %>
+    <%= image_tag @user.image.url, alt: @user.image, :size => "200x200" %>
+    <% else %>
+    <%= image_tag "/ramendays_image.png", alt: @user.image, :size => "200x200" %>
+    <% end %>
+    </div>
+  <div class="user-about">
+  <table>
+    <tr>
+      <th>ユーザー名</th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th>自己紹介文</th>
+      <td><%= @user.profile %></td>
+    </tr>
+  </table>
+  </div>
+  <br>
+  <%= link_to "ユーザー情報を編集する", edit_user_path(@user), class: "btn btn-info edit-btn" %>
+  </div>
+<%= link_to "新規店舗の登録", new_shop_path %>
+</div>

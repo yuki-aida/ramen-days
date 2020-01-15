@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_12_025616) do
+ActiveRecord::Schema.define(version: 2020_01_14_141917) do
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.string "adress"
+    t.string "area"
+    t.string "station"
+    t.string "tel"
+    t.string "business_hour"
+    t.string "holiday"
+    t.string "access"
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -19,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_01_12_025616) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.text "profile"
+    t.text "image"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

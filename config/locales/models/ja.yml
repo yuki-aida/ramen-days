@@ -8,3 +8,17 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
+  
+  activerecord:
+    models:
+      shops: 店舗
+    attributes:
+      shop:
+        name: 店舗名
+        adress: 住所
+        area: エリア
+        station: 最寄駅
+        tel: 電話番号
+        business_hour: 営業時間
+        holiday: 定休日
+        access: アクセス

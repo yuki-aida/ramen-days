@@ -9,9 +9,9 @@ class User < ApplicationRecord
             uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: { minimum: 4 }, allow_nil: true
-  # validates :profile, length: { maximum: 160 }
-  # mount_uploader :picture, PictureUploader
-  # validate  :picture_size
+  validates :profile, length: { maximum: 160 }
+  mount_uploader :image, ImageUploader
+  validate  :image_size
   
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -28,7 +28,7 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
   
-   def authenticated?(remember_token)
+  def authenticated?(remember_token)
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
@@ -38,8 +38,16 @@ class User < ApplicationRecord
   end
   
    private
+   
     def downcase_email
       self.email = self.email.downcase
+    end
+    
+    # アップロードされた画像のサイズをバリデーションする
+    def image_size
+      if image.size > 5.megabytes
+        errors.add(:image, "画像サイズは5MB以内です")
+      end
     end
   
 end
