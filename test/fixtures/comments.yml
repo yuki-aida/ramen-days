@@ -1,0 +1,9 @@
+michael_comment:
+  content: "おいしい。"
+  user: michael
+  shop: ramen1
+  
+ants_comment:
+  content: "まずい。"
+  user: archer
+  shop: ramen1

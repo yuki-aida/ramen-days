@@ -9,6 +9,7 @@ class Shop < ApplicationRecord
   validates :holiday, presence: true
   validates :access, presence: true
   validate  :image_size
+  has_many :comments, dependent: :destroy
   
   private
 

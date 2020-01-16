@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/destroy'
   get 'sessions/new'
   get 'users/new'
     root 'static_pages#home'
@@ -11,4 +13,5 @@ Rails.application.routes.draw do
     delete  '/logout',  to: 'sessions#destroy'
     resources :users
     resources :shops
+    resources :comments, only: [:create, :destroy]
 end

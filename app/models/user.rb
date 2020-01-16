@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 160 }
   mount_uploader :image, ImageUploader
   validate  :image_size
+  has_many :comments, dependent: :destroy
   
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

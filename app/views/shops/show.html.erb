@@ -9,6 +9,36 @@
   <% end %>
   </div>
   <h3 style="text-align: center;"><%= "「#{@shop.name}」へのコメント" %></h3>
+  <br>
+  <% if @comments.any? %>
+  <% @comments.each do |comment| %>
+  <div class="comments">
+  <p class = "comment-content">
+  <%= comment.content %>
+  </p>
+  <span class="comment-timestamp">
+    投稿者 <%= link_to " :#{comment.user.name}", user_path(comment.user) %>
+    | <%= time_ago_in_words(comment.created_at) %>前
+    <% if current_user?(comment.user) %>
+      <%= link_to "削除", comment, method: :delete,
+                                       data: { confirm: "本当に削除して良いですか？" } %>
+    <% end %>
+  </span>
+  <div style="clear: both"></div>
+  </div>
+  <% end %>
+  <% end %>
+  <% if logged_in? %>
+  <div class="field">
+  <%= form_for(@comment) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div><%= hidden_field_tag :shop_id, @shop.id %></div>
+        <%= f.text_area :content, size: "10x5", class: "form-control", placeholder: "400字以内で入力してください。" %>
+      <%= f.submit "投稿する", class: "btn btn-info" %>
+  <% end %>
+  </div>
+  <% end %>
+  
   <h3>店舗情報</h3>
   <div class="shop-info">
   <table>
@@ -49,4 +79,6 @@
 </div>
 <br>
 <br>
+<% if logged_in? %>
 <%= link_to "編集", edit_shop_path(@shop), class: "btn btn-info edit-btn" %>
+<% end %>
