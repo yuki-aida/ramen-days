@@ -1,3 +1,4 @@
+<% provide(:title, @user.name) %>
 <div class="container">
   <h1>ユーザー情報</h1>
   <div class="user-info">
@@ -11,8 +12,8 @@
   <div class="user-about">
   <table>
     <tr>
-      <th>ユーザー名</th>
-      <td><%= @user.name %></td>
+      <th class="col-md-4">ユーザー名</th>
+      <td class="col-md-6"><%= @user.name %></td>
     </tr>
     <tr>
       <th>自己紹介文</th>
@@ -24,6 +25,8 @@
   <br>
   <%= link_to "ユーザー情報を編集する", edit_user_path(@user), class: "btn btn-info edit-btn" %>
   </div>
+  <% if current_user.admin? %>
 <%= link_to "新規店舗の登録", new_shop_path %>
+  <% end %>
 <% end %>
 </div>

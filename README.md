@@ -1,24 +1,30 @@
-# README
+# Ramen Daysについて
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
+https://ramen-days912225.herokuapp.com/
 
-Things you may want to cover:
+## コンセプト
+- 美味しいラーメン屋を効率よく探し、コメントを通じて情報交換をすることができます。
 
-* Ruby version
+## 機能一覧
+- ユーザー登録機能
+- ログイン、ログアウト機能
+- 店舗一覧表示機能
+- 店舗詳細表示機能
+- 管理者権限
+- 店舗の新規登録、編集、削除機能
+- 店舗検索機能
+- コメント表示機能
+- コメント投稿機能
+- お気に入り機能
+- 画像ファイルのアップロード機能
+- 単体テスト、統合テスト機能(minitestを使用)
 
-* System dependencies
+## インフラ構成
+- 言語: Ruby 2.6.3, Rails 5.2.0
+- 統合開発環境: AWS
+- 公開用プラットフォーム: Heroku
+- バージョン管理: Git
+- Webサーバー: Puma 3.9.1(本番環境)
+- DB: PostgreSQL 0.20.0(本番環境)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

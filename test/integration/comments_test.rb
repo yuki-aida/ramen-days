@@ -20,6 +20,11 @@ class CommentsTest < ActionDispatch::IntegrationTest
   end
   
   test "valid comment post" do
+    get shop_path(@shop)
+    assert_template 'shops/show'
+    assert_no_difference 'Comment.count' do
+      post comments_path, params: { comment: { content: "" } }
+    end
     log_in_as(@user)
     get shop_path(@shop)
     # 何故かテストが通らない

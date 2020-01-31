@@ -6,6 +6,7 @@ class ShopTest < ActiveSupport::TestCase
     
     @shop = Shop.create(name: "ramen", adress: "ramen", area: "ramen", station: "ramen",
                 tel: "ramen", business_hour: "ramen", holiday: "ramen", access: "ramen",
+                map: "ramen"
                 )
   end
   

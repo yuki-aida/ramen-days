@@ -129,12 +129,21 @@ footer ul li+li{
 }
 
 /* homepage */
-.zyo-ho {
-  font-size: 15px;
+.oshirase{
+  table{
+  width: 100%;
 }
+  table th{
+    
+  }
 
-.oshirase {
-  font-size: 18px;
+  table th,table td{
+    font-size: 15px;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+}
 }
 
 /* forms */
@@ -218,6 +227,16 @@ table tr:nth-child(odd){
   margin: 0 auto;
 }
 
+.btn-gray {
+  background-color: #C0C0C0;
+}
+
+.iine-button {
+  width: 342px !important;
+  padding: 10px !important;
+  margin: 0 auto;
+}
+
 /* index */
 
 .shops {
@@ -280,4 +299,51 @@ table tr:nth-child(odd){
   .comment-timestamp {
     float: right;
   }
+}
+
+#field {
+  text-align: center;
+}
+
+.for_comments {
+  width: 342px !important;
+  padding: 10px 0;
+}
+
+/* Search */
+
+.search-group{
+  padding: 7px;
+  
+  input[type=search] {
+  webkit-appearance: none;
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 0 !important;
+  padding: 7px;
+  width: 200px;
+  font-size: 100%;
+  box-sizing: border-box;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  border-right: none;
+  height: 35px !important;
+  }
+  
+  input[type=submit] {
+  webkit-appearance: none;
+  display: inline-block;
+  padding: 0 10px;
+  color: #fff;
+  width: 50px;
+  padding: 7px;
+  font-size: 100%;
+  vertical-align: top;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background: #808080;
+  margin-bottom: 0 !important;
+  height: 35px !important;
+  }
+  
 }

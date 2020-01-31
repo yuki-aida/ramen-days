@@ -7,3 +7,8 @@ ants_comment:
   content: "まずい。"
   user: archer
   shop: ramen1
+  
+ants_comment:
+  content: "ふつう"
+  user: archer
+  shop: ramen2

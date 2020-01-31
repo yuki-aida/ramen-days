@@ -31,7 +31,9 @@ class ShopsEditTest < ActionDispatch::IntegrationTest
                                         tel: "ramen",
                                         business_hour: "ramen",
                                         holiday: "ramen",
-                                        access: "ramen" } }
+                                        access: "ramen",
+                                        map: "ramen"
+                                        } }
     assert_not flash.empty?
     assert_redirected_to @shop
     @shop.reload

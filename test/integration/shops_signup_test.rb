@@ -31,7 +31,8 @@ class ShopsSignupTest < ActionDispatch::IntegrationTest
                                         tel: "ramen",
                                         business_hour: "ramen",
                                         holiday: "ramen",
-                                        access: "ramen" } }
+                                        access: "ramen",
+                                        map: "ramen"} }
     end
     follow_redirect!
     assert_template 'shops/show'

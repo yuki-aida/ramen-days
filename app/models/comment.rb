@@ -4,4 +4,5 @@ class Comment < ApplicationRecord
   validates :user_id, presence: true
   validates :shop_id, presence: true
   validates :content, presence: true, length: { maximum: 400 }
+  counter_culture :shop
 end

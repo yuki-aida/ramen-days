@@ -6,9 +6,10 @@
       <div class="container">
       <ul class="nav navbar-nav">
         <li><%= link_to "Ramen Days", root_path, id: "logo" %></li>
-        <li><%= link_to "Ramen Daysについて", about_path %></li>
+        <li><div class="search-group"><%= render 'shared/search' %></div></li>
         <li><%= link_to "店舗一覧", shops_path %></li>
         <% if logged_in? %>
+          <li><%= link_to "お気に入りした店舗", '/likes' %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               アカウント <b class="caret"></b>

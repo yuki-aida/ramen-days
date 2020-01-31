@@ -1,0 +1,17 @@
+<% if logged_in? %>
+    <% if shop.iine?(current_user) %>
+      <div class="iine-button">
+        <%= form_for(shop.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
+          <%= f.submit "登録を外す", class: "btn btn-gray" %>
+        <% end %>
+      </div>
+      <% else %>
+      <div class="iine-button">
+        <%= form_for(shop.likes.build, remote: true) do |f| %>
+          <div><%= hidden_field_tag :user_id, current_user.id %></div>
+          <div><%= hidden_field_tag :shop_id, shop.id %></div>
+          <%= f.submit "お気に入りに登録", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <% end %>
+  <% end %>

@@ -14,4 +14,7 @@ Rails.application.routes.draw do
     resources :users
     resources :shops
     resources :comments, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy]
+    get  '/likes', to: 'shops#likes'
+    get '/search', to: 'shops#search'
 end

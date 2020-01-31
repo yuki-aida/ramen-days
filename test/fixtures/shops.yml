@@ -9,9 +9,10 @@ ramen1:
   business_hour: "10:00~22:00"
   holiday: "水曜日"
   access: "京成佐倉駅から徒歩2分"
+  map: "aaaaaa"
   
 ramen2:
-  name: "ラーメン1号"
+  name: "こんしんや"
   adress: "千葉県佐倉市"
   area: "千葉県"
   station: "京成佐倉駅"
@@ -19,3 +20,15 @@ ramen2:
   business_hour: "10:00~22:00"
   holiday: "水曜日"
   access: "京成佐倉駅から徒歩2分"
+  map: "aaaaaa"
+  
+ramen3:
+  name: "やまおかや"
+  adress: "千葉県佐倉市"
+  area: "千葉県"
+  station: "京成佐倉駅"
+  tel: "080-9311-8765"
+  business_hour: "10:00~22:00"
+  holiday: "水曜日"
+  access: "京成佐倉駅から徒歩2分"
+  map: "aaaaaa"

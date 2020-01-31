@@ -13,6 +13,7 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   validate  :image_size
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

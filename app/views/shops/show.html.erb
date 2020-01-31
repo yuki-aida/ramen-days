@@ -1,3 +1,4 @@
+<% provide(:title, @shop.name) %>
 <h1><%= @shop.name %></h1>
 
 <div class = "container">
@@ -8,6 +9,9 @@
   <%= image_tag "878520.jpg", alt: @shop.image, :size => "555x370" %>
   <% end %>
   </div>
+  
+  <%= render "likes/likes", shop: @shop %>
+  
   <h3 style="text-align: center;"><%= "「#{@shop.name}」へのコメント" %></h3>
   <br>
   <% if @comments.any? %>
@@ -37,14 +41,16 @@
       <%= f.submit "投稿する", class: "btn btn-info" %>
   <% end %>
   </div>
+  <% else %>
+  <div id="field"><%= link_to "ログインしてコメントする", login_path, class: "btn btn-info for_comments" %></div>
   <% end %>
   
   <h3>店舗情報</h3>
   <div class="shop-info">
   <table>
     <tr>
-      <th>店舗名</th>
-      <td><%= @shop.name %></td>
+      <th class="col-md-4">店舗名</th>
+      <td class="col-md-6"><%= @shop.name %></td>
     </tr>
     <tr>
       <th>住所</th>
@@ -74,11 +80,15 @@
       <th>アクセス</th>
       <td><%= @shop.access %></td>
     </tr>
+    <tr>
+      <th>マップ</th>
+      <td><%= link_to @shop.map, @shop.map %></td>
+    </tr>
   </table>
   </div>
 </div>
 <br>
 <br>
-<% if logged_in? %>
+<% if logged_in? && current_user.admin? %>
 <%= link_to "編集", edit_shop_path(@shop), class: "btn btn-info edit-btn" %>
 <% end %>

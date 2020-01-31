@@ -1,17 +1,23 @@
-<div class="row">
-    <div class="col-md-2 oshirase">
-        お知らせ
+<div class="container">
+  <h1>Ramen Daysへようこそ！</h1>
+  <h3>お知らせ</h3>
+    <div class="oshirase">
+      <table>
+        <tr>
+          <th class="col-md-4">2020年1月15日</th>
+          <td class="col-md-6">Ramen Daysの制作を開始しました。</td>
+        </tr>
+        <tr>
+          <th>2020年2月1日</th>
+          <td>Ramen Daysが完成しました！</td>
+        </tr>
+      </table>
     </div>
-    <div class="col-md-10">
-        <dl class="row zyo-ho">
-            <dt class="col-md-3">2020年1月11日</dt>
-            <dd class="col-md-9">Ramen Daysの制作を開始しました。</dd>
-            <dt class="col-md-3">2020年1月11日</dt>
-            <dd class="col-md-9">Ramen Daysの制作を開始しました。</dd>
-            <dt class="col-md-3">2020年1月11日</dt>
-            <dd class="col-md-9">Ramen Daysの制作を開始しました。</dd>
-            <dt class="col-md-3">2020年1月11日</dt>
-            <dd class="col-md-9">Ramen Daysの制作を開始しました。</dd>
-        </dl>
+  <br>
+  <h3>店舗一覧</h3>
+    <ul class="shops">
+    <div class="row">
+    <%= render @shops %>
     </div>
+    </ul>
 </div>
